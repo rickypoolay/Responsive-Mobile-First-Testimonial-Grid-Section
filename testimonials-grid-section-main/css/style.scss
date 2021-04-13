@@ -1,0 +1,156 @@
+$primary-violet: hsl(263, 55%, 52%);
+$primary-darkblue:hsl(217, 19%, 35%);
+$primary-blackblue:hsl(219, 29%, 14%);
+$neutral-lightgray:hsl(0, 0%, 81%);
+$neutral-grayblue:hsl(210, 46%, 95%);
+$mdsize: (
+    "phone":375px,
+    "tablet":600px,
+    "desktop":768px,
+);
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+/* Not the way i want to center it 
+section{
+    height:100vh;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $neutral-grayblue;
+    font-size:4vw;
+}
+
+p{
+    color:#8A93A1;
+    grid-area:paragraph;
+    font-size: .85em;
+}
+
+img{
+    border-radius: 50%;
+    width:6vw;
+    grid-area:img;
+    margin:auto;
+}
+
+h3{
+    grid-area:title;
+}
+
+
+.grid-container{
+    width:90%;
+    margin-top: 50px;
+
+    .lighttext{
+        color:white;
+    }
+
+    .cc1 {
+        background-color: $primary-violet;
+    }
+    .cc2 {
+        background-color: $primary-darkblue;
+    }
+    .cc3 {
+        background-color: white;
+    }
+    .cc4 {
+        background-color: $primary-blackblue;
+    }
+    .cc5 {
+        background-color: white;
+    }
+}
+
+.comment-container{
+    display:grid;
+    grid-template-columns: auto 2fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "img name"
+    "title title"
+    "paragraph paragraph";
+    gap:15px;
+    border-radius: 10px;
+    padding:2em;
+    margin-bottom: 1em;
+
+    .info{
+        grid-area:name;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+        .name{
+            font-weight: 300;
+        }
+    }
+}
+
+@media (min-width:1000px) {
+
+    body{
+        font-size:1vw;
+    }
+
+    img{
+        max-width:2vw;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "tl tl tm r"
+        "bl bm bm r";
+        gap:2em;
+        width:90%;
+        max-width:75%;
+        margin-top:200px;
+    }
+
+    .comment-container{
+        margin:0;
+
+    }
+
+    .cc1 {
+        grid-area:tl;
+    }
+
+    .cc2 {
+        grid-area:tm;
+    }
+
+    .cc3 {
+        grid-area:bl;
+    }
+
+    .cc4 {
+        grid-area:bm;
+    }
+
+    .cc5 {
+        grid-area:r;
+    }
+    
+
+}
